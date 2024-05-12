@@ -1,0 +1,100 @@
+@import "generals";
+@import "components";
+@import "layouts";
+
+.blogs {
+    margin-top: 50px;
+
+    .blogs-left {
+        width: 50%;
+        position: relative;
+
+        h2 {
+            color: $light-color;
+            font-size: 3rem;
+            font-family: $font-sans-serif;
+            font-weight: 700;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 5px;
+            opacity:$img-opacity;
+        }
+
+        .news-trend {
+            position: absolute;
+            background-color:$white-color;
+            border-radius:$border-radius;
+            padding: 10px 20px;
+            margin-top: -50px;
+            box-shadow:$box-shadow;
+            .icons {
+                margin-top: 5px;
+
+                span {
+                    margin-left: 20px;
+                }
+            }
+            h3{
+                margin-top: 10px;
+                color:$light-color;
+            }
+        }
+    }
+}
+
+.blogs-right {
+    
+    width: 50%;
+    .blog{
+        box-shadow:$box-shadow;
+        @extend .flex-display;
+        margin-bottom: 20px;
+        border-radius:$border-radius;
+        .blog-info{
+            padding: 10px 20px;
+            width: 70%;
+            .icon{
+                font-size: 1.2rem;
+            }
+            h3{
+                margin-top: 10px;
+                color: $light-color;
+                a{
+                    text-decoration: none;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+                margin-bottom: 10px;
+            }
+            p{
+                text-align: justify;
+            }
+        }
+        .blog-img{
+            width: 35%;
+            padding: 10px 20px;
+
+            img{
+                width: 150px;
+                height: 120px;
+                border-radius:$border-radius;
+                opacity:$img-opacity;
+            }
+        }
+    }
+}
+@mixin icons-colors($icons...){
+    @each $name,
+    $fg in $icons{
+        .#{$name}{
+            color: $fg;
+            &:hover{
+                color: lighten($fg,20%);
+            }
+        }
+    }
+}
+@include icons-colors("fa-calendar" #f50db0,"fa-eye" #fd53ca,"fa-heart" #f9b2e4)

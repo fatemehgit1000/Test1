@@ -1,0 +1,125 @@
+:root{
+    --back-color:rgba(50,50,100,0.9);
+    --dark-color:#0d9db0;
+    --light-color:#05bbd4;
+    --white-color:#fff;
+    --gray-color:rgb(191,185,185);
+}
+body{
+    color: var(--dark-color);
+    font-family:sans-serif;
+    font-weight: 600;
+}
+*{
+    box-sizing: border-box;
+}
+.main-box{
+    position: relative;
+    margin:0 auto;
+    background: url(../images/AAKGISLHCM.jpg) no-repeat center;
+    width: 525px;;
+    height: 680px;
+}
+.accounting-box{
+    width: 100%;
+    height: 100%;
+    background:var(--back-color);
+    padding: 100px 70px 50px 70px;
+
+}
+.tab{
+    color: var(--dark-color);
+    display: inline-block;
+    margin: 0 15px 15px 0px;
+    font-size: 25px;
+}
+.form {
+    min-height: 350px;
+    position: relative;
+}
+.login-form,
+.register-form{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all 0.7s linear;
+}
+.login-tab,
+.register-tab{display: none;
+}
+
+
+
+/* .login-form{
+    background-color: red;
+
+}
+.register-form{
+    background-color: yellow;
+
+} */
+.login-tab:checked+.tab+.register-tab+.tab+.form .login-form{
+    transform: rotate(0);
+}
+.register-tab:checked+.tab+.form .register-form{
+    transform: rotate(0);
+}
+.login-tab:checked+.tab,
+.register-tab:checked+.tab {
+    color:var(--white-color);
+    border-bottom:2px solid var(--light-color);
+    transition: 0.5s;
+    padding-bottom:3px;
+}
+.form-group .label,
+.form-group .input,
+.form-group .button{
+    width: 100%;
+    display: block;
+}
+.form-group .label{
+    color:var(--gray-color);
+    margin-bottom: 3px;
+}
+.form-group .input,
+.form-group .button{
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    background: rgba(240, 180, 180, 0.1);
+    color:var(--white-color);
+}
+#remember-check{
+    display: none;
+}
+.check-icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius:3px;
+    background-color:var(--gray-color);
+}
+#remember-check:checked+label .check-icon{
+    background-color: var(--dark-color);
+}
+#remember-check:checked+label{
+    background-color: var(--dark-color);
+}
+.form-group .button{
+    margin-top: 20px;
+    background-color: var(--light-color);
+}
+.forgot-pass{
+    text-align: center;
+    margin-top: 100px;
+}
+.forgot-pass a{
+    text-decoration: none;
+    color:var(--light-color);
+}

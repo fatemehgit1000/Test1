@@ -1,0 +1,90 @@
+@import "generals";
+@import "components";
+@import "layouts";
+
+.contact-us {
+    background-color: $dark-color;
+    height: 520px;
+    margin-top: 40px;
+}
+
+.contact-us-left {
+    color: $white-color;
+    width: 50%;
+    padding: 20px 10px 10px;
+
+    .contact-us-left h2 {
+        font-size: 3rem;
+    }
+
+    p {
+        text-align: justify;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        margin-top: 20px;
+        padding-left: 20px;
+
+        &>strong {
+            font-size: 2rem;
+            font-weight: 900;
+            font-family: $font-CourierNew;
+        }
+
+        li {
+            list-style: none;
+            margin-top: 10px;
+
+            a {
+                text-decoration: none;
+                margin-left: 40px;
+                .icon{
+                    display: inline-block;
+                    text-align: center;
+                    line-height: 20px;
+                    width: 30px;
+                    height: 30px;
+                    background-color: $white-color;
+                    color:$red-color;
+                    border-radius: 50%;
+                    padding: 5px;
+                    &:hover{
+                        background-color: $red-color;
+                        color: $white-color;
+                    }
+                }
+
+            }
+            strong{
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+.contact-us-right {
+    background-color: $white-color;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    .form-control{
+        .input,
+        textarea,
+        .button{
+            @include input($light-color);
+            
+        }
+        .input,
+        textarea{
+            width: 100%;
+        }
+        .button{
+            &:hover{
+                background-color: $light-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
